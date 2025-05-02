@@ -23,6 +23,7 @@ allprojects {
 
 apply plugin: "com.android.library"
 apply plugin: "kotlin-android"
+apply plugin: 'kotlin-kapt'
 
 android {
     namespace = "vn.lochv.camera_plugin"
@@ -40,6 +41,11 @@ android {
     
     buildFeatures {
         compose true
+        // dataBinding true // 👉 Chỉ bật nếu bạn thật sự cần DataBinding XML
+    }
+
+    dataBinding {
+        enabled = true
     }
 
     composeOptions {
@@ -56,8 +62,12 @@ android {
     }
 
     dependencies {
+        implementation project(':engine')
+
         testImplementation("org.jetbrains.kotlin:kotlin-test")
         testImplementation("org.mockito:mockito-core:5.0.0")
+        implementation fileTree(dir: 'libs', include: ['*.jar'])
+        implementation 'androidx.appcompat:appcompat:1.7.0'
                 
         implementation "androidx.activity:activity-compose:1.7.2"
         implementation "androidx.camera:camera-core:1.1.0"
@@ -67,6 +77,12 @@ android {
         implementation "androidx.compose.material3:material3:1.1.1"
         implementation "androidx.compose.ui:ui-tooling-preview:1.5.0"
         implementation "androidx.camera:camera-view:1.1.0"
+
+        implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.0'
+        implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+//        implementation "io.flutter:flutter_embedding_debug:1.0.0"
+
+//        kapt "com.android.databinding:compiler:"
     }
 
     testOptions {

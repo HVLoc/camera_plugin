@@ -42,7 +42,7 @@ class CameraPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
   override fun onMethodCall(call: MethodCall, result: MethodChannel.Result) {
     if (call.method == "openCamera") {
       activity?.let {
-        val intent = Intent(it, CameraActivity::class.java)
+        val intent = Intent(it, HomeActivity::class.java)
         it.startActivity(intent)
         result.success(null)
       } ?: result.error("NO_ACTIVITY", "Activity is null", null)

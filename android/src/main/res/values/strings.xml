@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Mini-FAS</string>
+
+    <string name="real_face">Ảnh thật</string>
+    <string name="fake_face">Ảnh fake</string>
+    <string name="set_threshold_dialog_title">Thiết lập giá trị</string>
+    <string name="set_threshold_dialog_text_hint">Phạm vi 0–1,đến 0.915</string>
+    <string name="set_threshold_dialog_confirm">Xác nhận</string>
+    <string name="set_threshold_dialog_hint">Vui lòng nhập vào giá trị</string>
+</resources>
