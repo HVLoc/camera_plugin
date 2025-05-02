@@ -16,6 +16,7 @@ import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.core.CameraSelector
 import androidx.camera.view.PreviewView
 import androidx.compose.runtime.Composable
+import java.util.jar.Manifest
 
 class CameraActivity : ComponentActivity() {
     private val CAMERA_PERMISSION_REQUEST_CODE = 100
